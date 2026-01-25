@@ -18,28 +18,26 @@ const App: React.FC = () => {
   const [fileData, setFileData] = useState<FileData | null>(null);
   const [result, setResult] = useState<ConversionResult | null>(null);
 
-  // Handle Routing based on Hash
+  // Handle Routing based on URL Hash
   useEffect(() => {
     const handleHashChange = () => {
       const hash = window.location.hash;
       if (hash === '#privacy') {
         setView('privacy');
-        window.scrollTo(0, 0);
       } else if (hash === '#terms') {
         setView('terms');
-        window.scrollTo(0, 0);
       } else if (hash === '#disclaimer') {
         setView('disclaimer');
-        window.scrollTo(0, 0);
       } else {
         setView('home');
-        window.scrollTo(0, 0);
       }
+      window.scrollTo(0, 0);
     };
 
     // Initial check
     handleHashChange();
 
+    // Listen for changes
     window.addEventListener('hashchange', handleHashChange);
     return () => window.removeEventListener('hashchange', handleHashChange);
   }, []);
@@ -155,6 +153,7 @@ const App: React.FC = () => {
         {view === 'terms' && <TermsOfUseSection />}
 
         {view === 'disclaimer' && <DisclaimerSection />}
+
       </main>
 
       <Footer />

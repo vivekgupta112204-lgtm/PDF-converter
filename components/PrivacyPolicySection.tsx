@@ -1,15 +1,27 @@
 import React from 'react';
-import { Shield, EyeOff, FileX, ServerOff } from 'lucide-react';
+import { Shield, EyeOff, FileX, ServerOff, ArrowLeft } from 'lucide-react';
 
 const PrivacyPolicySection: React.FC = () => {
   return (
-    <section id="privacy" className="py-20 bg-slate-100 border-t border-slate-200">
+    <section className="py-12 bg-slate-50 min-h-[calc(100vh-64px)]">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Navigation Breadcrumb - Clicking '#' triggers the hashchange listener in App.tsx to return Home */}
+        <div className="mb-8">
+          <a 
+            href="#" 
+            className="inline-flex items-center text-sm font-medium text-slate-500 hover:text-indigo-600 transition-colors"
+          >
+            <ArrowLeft className="h-4 w-4 mr-1" />
+            Back to Converter
+          </a>
+        </div>
+
         <div className="text-center mb-12">
           <div className="inline-flex items-center justify-center p-3 bg-white rounded-xl shadow-sm border border-slate-200 mb-4">
             <Shield className="h-8 w-8 text-green-600" />
           </div>
-          <h2 className="text-3xl font-bold text-slate-900">Privacy Policy</h2>
+          <h1 className="text-3xl font-bold text-slate-900">Privacy Policy</h1>
           <p className="mt-4 text-lg text-slate-600">
             Transparency is our core value. Here is exactly how we handle your data.
           </p>

@@ -3,7 +3,7 @@ import { AlertCircle, HelpCircle, ExternalLink, Info } from 'lucide-react';
 
 const DisclaimerSection: React.FC = () => {
   return (
-    <section id="disclaimer" className="py-20 bg-slate-50 border-t border-slate-200">
+    <section id="disclaimer" className="py-20 bg-slate-50">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <div className="inline-flex items-center justify-center p-3 bg-white rounded-xl shadow-sm border border-slate-200 mb-4">

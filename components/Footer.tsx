@@ -19,7 +19,7 @@ const Footer: React.FC = () => {
           </div>
           <div>
             <h3 className="text-slate-100 font-semibold mb-3">Contact</h3>
-            <p>Questions? support@pdfconverter.com</p>
+            <p>Questions? vg112204@gmail.com</p>
             <p className="mt-4 text-xs">© {new Date().getFullYear()} PDF Converter. All rights reserved.</p>
           </div>
         </div>
