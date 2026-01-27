@@ -64,15 +64,15 @@
     <main class="flex-grow">
         
         <!-- Tool Section -->
-        <section class="py-12 md:py-20 px-4">
+        <section class="py-12 md:py-20 px-4 bg-white border-b border-slate-100">
             <div class="max-w-3xl mx-auto text-center mb-10">
                 <h1 class="text-3xl md:text-5xl font-extrabold text-slate-900 mb-6">Free JPG to PDF Converter Online</h1>
                 <p class="text-lg text-slate-600 max-w-2xl mx-auto">Convert JPG images to PDF online quickly and securely with no signup required.</p>
             </div>
 
-            <div class="max-w-xl mx-auto bg-white rounded-2xl shadow-xl border border-slate-100 p-8">
+            <div class="max-w-xl mx-auto bg-slate-50 rounded-2xl shadow-lg border border-slate-200 p-8">
                 <!-- Upload State -->
-                <div id="upload-area" class="border-2 border-dashed border-slate-300 rounded-xl p-10 text-center cursor-pointer transition-colors hover:bg-slate-50">
+                <div id="upload-area" class="border-2 border-dashed border-slate-300 rounded-xl p-10 text-center cursor-pointer transition-colors hover:bg-white hover:border-indigo-400">
                     <input type="file" id="file-input" class="hidden" accept="image/jpeg, image/png, image/jpg">
                     <div class="flex flex-col items-center gap-4">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -87,20 +87,20 @@
 
                 <!-- Preview/Action State (Hidden by default) -->
                 <div id="action-area" class="hidden text-center">
-                    <div class="mb-6 bg-slate-50 p-4 rounded-lg flex items-center justify-between">
+                    <div class="mb-6 bg-white p-4 rounded-lg border border-slate-200 flex items-center justify-between shadow-sm">
                         <span id="filename" class="font-medium text-slate-700 truncate max-w-[200px]">image.jpg</span>
                         <button id="remove-btn" class="text-red-500 hover:text-red-700 text-sm font-medium">Remove</button>
                     </div>
                     
-                    <div id="preview-container" class="mb-6 h-48 flex items-center justify-center bg-slate-100 rounded-lg overflow-hidden">
+                    <div id="preview-container" class="mb-6 h-48 flex items-center justify-center bg-slate-200 rounded-lg overflow-hidden border border-slate-300">
                         <img id="image-preview" class="h-full object-contain" alt="Preview">
                     </div>
 
-                    <button id="convert-btn" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded-lg transition-colors flex items-center justify-center gap-2">
+                    <button id="convert-btn" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded-lg transition-colors flex items-center justify-center gap-2 shadow-md">
                         <span>Convert to PDF</span>
                     </button>
 
-                    <a id="download-btn" class="hidden w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg transition-colors flex items-center justify-center gap-2 mt-4">
+                    <a id="download-btn" class="hidden w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg transition-colors flex items-center justify-center gap-2 mt-4 shadow-md">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                         </svg>
@@ -110,62 +110,120 @@
             </div>
         </section>
 
-        <!-- SEO Visible Content Section -->
-        <section class="max-w-4xl mx-auto px-4 py-10 text-gray-800">
-            <h2 class="text-3xl font-bold mb-4">Free JPG to PDF Converter Online</h2>
-          
-            <p class="mb-4">
-              This free JPG to PDF converter allows you to convert JPG images into PDF format online.
-              No software installation or registration is required. The tool works directly in your browser
-              and supports fast and secure image to PDF conversion.
-            </p>
-          
-            <h2 class="text-2xl font-semibold mt-6 mb-2">How to Convert JPG to PDF</h2>
-            <ol class="list-decimal list-inside mb-4">
-              <li>Upload your JPG image.</li>
-              <li>Click the convert button.</li>
-              <li>Download your PDF file instantly.</li>
-            </ol>
-          
-            <h2 class="text-2xl font-semibold mt-6 mb-2">Why Use This JPG to PDF Converter?</h2>
-            <ul class="list-disc list-inside mb-4">
-              <li>100% free online JPG to PDF converter</li>
-              <li>No login or signup required</li>
-              <li>Fast processing directly in browser</li>
-              <li>Works on mobile and desktop devices</li>
-            </ul>
-          
-            <h2 class="text-2xl font-semibold mt-6 mb-2">File Security & Privacy</h2>
-            <p class="mb-4">
-              Uploaded files are processed locally in your browser and are not stored on any server.
-              Your privacy and data security are fully protected.
-            </p>
-          
-            <h2 class="text-2xl font-semibold mt-6 mb-2">Frequently Asked Questions</h2>
-          
-            <p><strong>Is this JPG to PDF converter free?</strong><br>Yes, this tool is completely free.</p>
-            <p class="mt-2"><strong>Do I need to install software?</strong><br>No, everything works online.</p>
-            <p class="mt-2"><strong>Are my files safe?</strong><br>Yes, files are never uploaded to a server.</p>
-        </section>
+        <!-- SEO Content Section -->
+        <article class="max-w-4xl mx-auto px-4 py-12">
+            
+            <div class="space-y-16">
+                
+                <!-- What is this tool -->
+                <div class="prose prose-slate max-w-none">
+                    <h2 class="text-2xl font-bold text-slate-900 mb-4">What is the Free JPG to PDF Converter?</h2>
+                    <p class="text-slate-600 leading-relaxed text-lg">
+                        Our <strong>Free JPG to PDF Converter</strong> is a powerful web-based utility designed to transform your image files into professional PDF documents instantly. Whether you are archiving receipts, sharing photos, or consolidating scanned documents, this tool provides a seamless <strong>JPG to PDF online</strong> experience. Unlike complex software, this tool works directly in your web browser, ensuring high-quality results without watermarks or hidden fees.
+                    </p>
+                </div>
+
+                <!-- How to Use -->
+                <div>
+                    <h2 class="text-2xl font-bold text-slate-900 mb-6">How to Convert JPG to PDF Online</h2>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+                            <span class="block text-5xl font-bold text-indigo-100 mb-4">01</span>
+                            <h3 class="font-bold text-slate-900 text-lg mb-2">Upload Image</h3>
+                            <p class="text-slate-600">Select your JPG or PNG file from your device or simply drag and drop it into the conversion box.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+                            <span class="block text-5xl font-bold text-indigo-100 mb-4">02</span>
+                            <h3 class="font-bold text-slate-900 text-lg mb-2">Convert File</h3>
+                            <p class="text-slate-600">Click the conversion button. Our <strong>online PDF converter</strong> engine processes the image instantly.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+                            <span class="block text-5xl font-bold text-indigo-100 mb-4">03</span>
+                            <h3 class="font-bold text-slate-900 text-lg mb-2">Download PDF</h3>
+                            <p class="text-slate-600">Save the newly created PDF document directly to your computer or mobile device.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Benefits -->
+                <div class="bg-indigo-50 rounded-2xl p-8 border border-indigo-100">
+                    <h2 class="text-2xl font-bold text-slate-900 mb-6">Benefits of This Tool</h2>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <div class="bg-white p-1 rounded-full text-indigo-600 mr-3 mt-1">
+                                <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                            </div>
+                            <span class="text-slate-700"><strong>100% Free:</strong> Use this tool as many times as you like. There are no daily limits or subscription requirements.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="bg-white p-1 rounded-full text-indigo-600 mr-3 mt-1">
+                                <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                            </div>
+                            <span class="text-slate-700"><strong>Privacy First:</strong> We prioritize your security. Unlike other tools, we do not upload your files to a remote server.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="bg-white p-1 rounded-full text-indigo-600 mr-3 mt-1">
+                                <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                            </div>
+                            <span class="text-slate-700"><strong>Universal Compatibility:</strong> Whether you are on Windows, Mac, Linux, Android, or iOS, our <strong>convert image to PDF</strong> tool works seamlessly.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Security -->
+                <div class="prose prose-slate max-w-none">
+                    <h2 class="text-2xl font-bold text-slate-900 mb-4">File Security & Privacy</h2>
+                    <p class="text-slate-600 leading-relaxed">
+                        Security is our top concern. This <strong>online PDF converter</strong> utilizes advanced client-side technology (WebAssembly). This means the conversion process happens entirely within your own browser memory. Your personal documents and images are never transmitted to our servers, ensuring that your data remains private, secure, and under your full control at all times.
+                    </p>
+                </div>
+
+                <!-- FAQs -->
+                <div>
+                    <h2 class="text-2xl font-bold text-slate-900 mb-8">Frequently Asked Questions</h2>
+                    <div class="space-y-6">
+                        <div class="border-b border-slate-200 pb-6">
+                            <h3 class="text-lg font-bold text-slate-900 mb-2">Is this JPG to PDF converter completely free?</h3>
+                            <p class="text-slate-600">Yes, our tool is 100% free to use. You can convert image to PDF without creating an account or paying any fees.</p>
+                        </div>
+                        <div class="border-b border-slate-200 pb-6">
+                            <h3 class="text-lg font-bold text-slate-900 mb-2">Are my files stored on your server?</h3>
+                            <p class="text-slate-600">No. Your files are processed locally on your device. We do not store, view, or back up any of the content you upload.</p>
+                        </div>
+                        <div class="border-b border-slate-200 pb-6">
+                            <h3 class="text-lg font-bold text-slate-900 mb-2">Can I use this on my mobile phone?</h3>
+                            <p class="text-slate-600">Absolutely. This website is fully responsive and optimized for mobile devices, allowing you to convert photos to PDF on iPhone and Android smartphones easily.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </article>
 
     </main>
 
     <!-- Footer -->
-    <footer class="bg-slate-900 text-slate-400 py-12">
+    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
         <div class="max-w-5xl mx-auto px-4">
             <div class="flex flex-col md:flex-row justify-between items-center gap-6">
                 <div class="text-sm">
                     &copy; <script>document.write(new Date().getFullYear())</script> PDF Converter. All rights reserved.
                 </div>
-                <div class="flex flex-wrap justify-center gap-6 text-sm">
+                <div class="flex flex-wrap justify-center gap-6 text-sm font-medium">
                     <a href="/" class="hover:text-white transition-colors">Home</a>
                     <a href="privacy.html" class="hover:text-white transition-colors">Privacy Policy</a>
-                    <a href="terms.html" class="hover:text-white transition-colors">Terms of Use</a>
+                    <a href="terms.html" class="hover:text-white transition-colors">Terms & Conditions</a>
                     <a href="disclaimer.html" class="hover:text-white transition-colors">Disclaimer</a>
                 </div>
             </div>
             <div class="mt-8 text-center text-xs text-slate-600">
-                This tool is for educational and utility purposes.
+                This tool is provided for educational and utility purposes.
             </div>
         </div>
     </footer>
@@ -242,6 +300,8 @@
                 fileInput.value = '';
                 uploadArea.classList.remove('hidden');
                 actionArea.classList.add('hidden');
+                convertBtn.classList.remove('hidden');
+                downloadBtn.classList.add('hidden');
             }
 
             // PDF Conversion Logic
@@ -283,7 +343,9 @@
                     const x = (pageWidth - finalWidth) / 2;
                     const y = (pageHeight - finalHeight) / 2;
 
-                    doc.addImage(img, 'JPEG', x, y, finalWidth, finalHeight);
+                    // Support for PNG transparency handled by 'PNG', otherwise 'JPEG'
+                    const format = currentFile.type === 'image/png' ? 'PNG' : 'JPEG';
+                    doc.addImage(img, format, x, y, finalWidth, finalHeight);
                     
                     const pdfBlob = doc.output('blob');
                     const pdfUrl = URL.createObjectURL(pdfBlob);
@@ -297,11 +359,9 @@
                     convertBtn.classList.add('hidden');
                     downloadBtn.classList.remove('hidden');
                     
-                    // UX Delay just to show "Done" feeling
-                    setTimeout(() => {
-                        convertBtn.innerHTML = originalBtnText;
-                        convertBtn.disabled = false;
-                    }, 500);
+                    // Restore button state
+                    convertBtn.innerHTML = originalBtnText;
+                    convertBtn.disabled = false;
 
                 } catch (error) {
                     console.error(error);
