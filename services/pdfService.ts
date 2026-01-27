@@ -1,4 +1,4 @@
-import { FileData } from '../types';
+import { FileData, FileType } from '../types';
 
 declare global {
   interface Window {
@@ -44,7 +44,10 @@ export const convertImageToPdf = async (fileData: FileData): Promise<string> => 
         const x = (pageWidth - finalWidth) / 2;
         const y = (pageHeight - finalHeight) / 2;
 
-        doc.addImage(img, 'JPEG', x, y, finalWidth, finalHeight);
+        // Determine format based on file type to preserve transparency for PNGs
+        const format = fileData.file.type === FileType.PNG ? 'PNG' : 'JPEG';
+
+        doc.addImage(img, format, x, y, finalWidth, finalHeight);
         
         const pdfBlob = doc.output('blob');
         const pdfUrl = URL.createObjectURL(pdfBlob);

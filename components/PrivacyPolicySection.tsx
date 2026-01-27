@@ -1,5 +1,6 @@
 import React from 'react';
 import { Shield, EyeOff, FileX, ServerOff, ArrowLeft } from 'lucide-react';
+import AdUnit from './AdUnit';
 
 const PrivacyPolicySection: React.FC = () => {
   return (
@@ -84,7 +85,10 @@ const PrivacyPolicySection: React.FC = () => {
               </ul>
               <p className="text-xs text-slate-400 mt-6">Last updated: {new Date().toLocaleDateString()}</p>
             </div>
-
+          </div>
+          
+          <div className="px-8 pb-8">
+            <AdUnit slot="2482578430" />
           </div>
         </div>
       </div>

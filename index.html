@@ -1,24 +1,316 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PDF Converter | Free JPG to PDF Tool</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free JPG to PDF Converter Online | Fast & Secure</title>
+    <meta name="description" content="Convert JPG images to PDF online for free. Fast and secure image to PDF converter without signup. Process files instantly in your browser.">
+    
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- jsPDF Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <meta name="description" content="Convert JPG to PDF online for free. Fast, secure, and easy to use. No file upload required - processing happens in your browser." />
-  <script type="importmap">
+    
+    <style>
+        .drag-active {
+            border-color: #4f46e5;
+            background-color: #eef2ff;
+        }
+        .loader {
+            border: 3px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 3px solid #4f46e5;
+            width: 24px;
+            height: 24px;
+            -webkit-animation: spin 1s linear infinite; /* Safari */
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+<script type="importmap">
 {
   "imports": {
-    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-    "react/": "https://esm.sh/react@^19.2.3/",
-    "react": "https://esm.sh/react@^19.2.3",
-    "lucide-react": "https://esm.sh/lucide-react@^0.563.0"
+    "react": "https://esm.sh/react@^19.2.4",
+    "lucide-react": "https://esm.sh/lucide-react@^0.563.0",
+    "react/": "https://esm.sh/react@^19.2.4/"
   }
 }
 </script>
 </head>
-  <body class="bg-slate-50 text-slate-900 font-sans antialiased">
-    <div id="root"></div>
-  </body>
+<body class="bg-slate-50 text-slate-900 font-sans antialiased flex flex-col min-h-screen">
+
+    <!-- Navigation -->
+    <nav class="bg-white border-b border-slate-200">
+        <div class="max-w-5xl mx-auto px-4 h-16 flex items-center justify-between">
+            <a href="/" class="flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+                <span class="text-xl font-bold text-slate-900">PDF Converter</span>
+            </a>
+            <div class="hidden md:flex gap-6 text-sm font-medium text-slate-600">
+                <a href="/" class="hover:text-indigo-600">Home</a>
+                <a href="privacy.html" class="hover:text-indigo-600">Privacy</a>
+                <a href="terms.html" class="hover:text-indigo-600">Terms</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-grow">
+        
+        <!-- Tool Section -->
+        <section class="py-12 md:py-20 px-4">
+            <div class="max-w-3xl mx-auto text-center mb-10">
+                <h1 class="text-3xl md:text-5xl font-extrabold text-slate-900 mb-6">Free JPG to PDF Converter Online</h1>
+                <p class="text-lg text-slate-600 max-w-2xl mx-auto">Convert JPG images to PDF online quickly and securely with no signup required.</p>
+            </div>
+
+            <div class="max-w-xl mx-auto bg-white rounded-2xl shadow-xl border border-slate-100 p-8">
+                <!-- Upload State -->
+                <div id="upload-area" class="border-2 border-dashed border-slate-300 rounded-xl p-10 text-center cursor-pointer transition-colors hover:bg-slate-50">
+                    <input type="file" id="file-input" class="hidden" accept="image/jpeg, image/png, image/jpg">
+                    <div class="flex flex-col items-center gap-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                        </svg>
+                        <div>
+                            <p class="text-xl font-semibold text-slate-700">Click to upload image</p>
+                            <p class="text-sm text-slate-500 mt-1">or drag and drop JPG/PNG file here</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Preview/Action State (Hidden by default) -->
+                <div id="action-area" class="hidden text-center">
+                    <div class="mb-6 bg-slate-50 p-4 rounded-lg flex items-center justify-between">
+                        <span id="filename" class="font-medium text-slate-700 truncate max-w-[200px]">image.jpg</span>
+                        <button id="remove-btn" class="text-red-500 hover:text-red-700 text-sm font-medium">Remove</button>
+                    </div>
+                    
+                    <div id="preview-container" class="mb-6 h-48 flex items-center justify-center bg-slate-100 rounded-lg overflow-hidden">
+                        <img id="image-preview" class="h-full object-contain" alt="Preview">
+                    </div>
+
+                    <button id="convert-btn" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded-lg transition-colors flex items-center justify-center gap-2">
+                        <span>Convert to PDF</span>
+                    </button>
+
+                    <a id="download-btn" class="hidden w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg transition-colors flex items-center justify-center gap-2 mt-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                        </svg>
+                        <span>Download PDF</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEO Visible Content Section -->
+        <section class="max-w-4xl mx-auto px-4 py-10 text-gray-800">
+            <h2 class="text-3xl font-bold mb-4">Free JPG to PDF Converter Online</h2>
+          
+            <p class="mb-4">
+              This free JPG to PDF converter allows you to convert JPG images into PDF format online.
+              No software installation or registration is required. The tool works directly in your browser
+              and supports fast and secure image to PDF conversion.
+            </p>
+          
+            <h2 class="text-2xl font-semibold mt-6 mb-2">How to Convert JPG to PDF</h2>
+            <ol class="list-decimal list-inside mb-4">
+              <li>Upload your JPG image.</li>
+              <li>Click the convert button.</li>
+              <li>Download your PDF file instantly.</li>
+            </ol>
+          
+            <h2 class="text-2xl font-semibold mt-6 mb-2">Why Use This JPG to PDF Converter?</h2>
+            <ul class="list-disc list-inside mb-4">
+              <li>100% free online JPG to PDF converter</li>
+              <li>No login or signup required</li>
+              <li>Fast processing directly in browser</li>
+              <li>Works on mobile and desktop devices</li>
+            </ul>
+          
+            <h2 class="text-2xl font-semibold mt-6 mb-2">File Security & Privacy</h2>
+            <p class="mb-4">
+              Uploaded files are processed locally in your browser and are not stored on any server.
+              Your privacy and data security are fully protected.
+            </p>
+          
+            <h2 class="text-2xl font-semibold mt-6 mb-2">Frequently Asked Questions</h2>
+          
+            <p><strong>Is this JPG to PDF converter free?</strong><br>Yes, this tool is completely free.</p>
+            <p class="mt-2"><strong>Do I need to install software?</strong><br>No, everything works online.</p>
+            <p class="mt-2"><strong>Are my files safe?</strong><br>Yes, files are never uploaded to a server.</p>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12">
+        <div class="max-w-5xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="text-sm">
+                    &copy; <script>document.write(new Date().getFullYear())</script> PDF Converter. All rights reserved.
+                </div>
+                <div class="flex flex-wrap justify-center gap-6 text-sm">
+                    <a href="/" class="hover:text-white transition-colors">Home</a>
+                    <a href="privacy.html" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="terms.html" class="hover:text-white transition-colors">Terms of Use</a>
+                    <a href="disclaimer.html" class="hover:text-white transition-colors">Disclaimer</a>
+                </div>
+            </div>
+            <div class="mt-8 text-center text-xs text-slate-600">
+                This tool is for educational and utility purposes.
+            </div>
+        </div>
+    </footer>
+
+    <!-- App Logic -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const uploadArea = document.getElementById('upload-area');
+            const fileInput = document.getElementById('file-input');
+            const actionArea = document.getElementById('action-area');
+            const previewImg = document.getElementById('image-preview');
+            const filenameSpan = document.getElementById('filename');
+            const removeBtn = document.getElementById('remove-btn');
+            const convertBtn = document.getElementById('convert-btn');
+            const downloadBtn = document.getElementById('download-btn');
+            
+            let currentFile = null;
+
+            // Handle Drag & Drop
+            ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+                uploadArea.addEventListener(eventName, preventDefaults, false);
+            });
+
+            function preventDefaults(e) {
+                e.preventDefault();
+                e.stopPropagation();
+            }
+
+            ['dragenter', 'dragover'].forEach(eventName => {
+                uploadArea.addEventListener(eventName, () => uploadArea.classList.add('drag-active'), false);
+            });
+
+            ['dragleave', 'drop'].forEach(eventName => {
+                uploadArea.addEventListener(eventName, () => uploadArea.classList.remove('drag-active'), false);
+            });
+
+            uploadArea.addEventListener('drop', handleDrop, false);
+            uploadArea.addEventListener('click', () => fileInput.click());
+            fileInput.addEventListener('change', handleFiles);
+            removeBtn.addEventListener('click', resetState);
+
+            function handleDrop(e) {
+                const dt = e.dataTransfer;
+                const files = dt.files;
+                handleFiles({ target: { files: files } });
+            }
+
+            function handleFiles(e) {
+                const files = e.target.files;
+                if (files.length > 0 && files[0].type.startsWith('image/')) {
+                    currentFile = files[0];
+                    showPreview(currentFile);
+                } else {
+                    alert('Please upload a valid image file (JPG, PNG).');
+                }
+            }
+
+            function showPreview(file) {
+                const reader = new FileReader();
+                reader.readAsDataURL(file);
+                reader.onloadend = function() {
+                    previewImg.src = reader.result;
+                    filenameSpan.textContent = file.name;
+                    uploadArea.classList.add('hidden');
+                    actionArea.classList.remove('hidden');
+                    downloadBtn.classList.add('hidden');
+                    convertBtn.classList.remove('hidden');
+                }
+            }
+
+            function resetState(e) {
+                if(e) e.stopPropagation();
+                currentFile = null;
+                fileInput.value = '';
+                uploadArea.classList.remove('hidden');
+                actionArea.classList.add('hidden');
+            }
+
+            // PDF Conversion Logic
+            convertBtn.addEventListener('click', async () => {
+                if (!currentFile) return;
+
+                // Show Loading State
+                const originalBtnText = convertBtn.innerHTML;
+                convertBtn.innerHTML = '<div class="loader"></div> <span class="ml-2">Processing...</span>';
+                convertBtn.disabled = true;
+
+                try {
+                    const { jsPDF } = window.jspdf;
+                    const doc = new jsPDF();
+                    
+                    const img = new Image();
+                    img.src = previewImg.src;
+                    
+                    await new Promise((resolve) => {
+                        img.onload = resolve;
+                    });
+
+                    const imgWidth = img.width;
+                    const imgHeight = img.height;
+                    const pageWidth = 210; // A4 width in mm
+                    const pageHeight = 297; // A4 height in mm
+                    const margin = 10;
+                    
+                    const maxWidth = pageWidth - (margin * 2);
+                    const maxHeight = pageHeight - (margin * 2);
+                    
+                    const widthRatio = maxWidth / imgWidth;
+                    const heightRatio = maxHeight / imgHeight;
+                    const ratio = Math.min(widthRatio, heightRatio, 1);
+                    
+                    const finalWidth = imgWidth * ratio;
+                    const finalHeight = imgHeight * ratio;
+                    
+                    const x = (pageWidth - finalWidth) / 2;
+                    const y = (pageHeight - finalHeight) / 2;
+
+                    doc.addImage(img, 'JPEG', x, y, finalWidth, finalHeight);
+                    
+                    const pdfBlob = doc.output('blob');
+                    const pdfUrl = URL.createObjectURL(pdfBlob);
+                    
+                    // Setup Download
+                    const fileName = currentFile.name.replace(/\.[^/.]+$/, "") + ".pdf";
+                    downloadBtn.href = pdfUrl;
+                    downloadBtn.download = fileName;
+                    
+                    // Switch Buttons
+                    convertBtn.classList.add('hidden');
+                    downloadBtn.classList.remove('hidden');
+                    
+                    // UX Delay just to show "Done" feeling
+                    setTimeout(() => {
+                        convertBtn.innerHTML = originalBtnText;
+                        convertBtn.disabled = false;
+                    }, 500);
+
+                } catch (error) {
+                    console.error(error);
+                    alert('An error occurred during conversion.');
+                    convertBtn.innerHTML = originalBtnText;
+                    convertBtn.disabled = false;
+                }
+            });
+        });
+    </script>
+</body>
 </html>

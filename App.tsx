@@ -4,43 +4,14 @@ import Footer from './components/Footer';
 import FileUploader from './components/FileUploader';
 import ConversionCard from './components/ConversionCard';
 import SEOSection from './components/SEOSection';
-import PrivacyPolicySection from './components/PrivacyPolicySection';
-import TermsOfUseSection from './components/TermsOfUseSection';
-import DisclaimerSection from './components/DisclaimerSection';
+import AdUnit from './components/AdUnit';
 import { ConversionStatus, FileData, ConversionResult } from './types';
 import { convertImageToPdf, revokePdfUrl } from './services/pdfService';
 
-type ViewState = 'home' | 'privacy' | 'terms' | 'disclaimer';
-
 const App: React.FC = () => {
-  const [view, setView] = useState<ViewState>('home');
   const [status, setStatus] = useState<ConversionStatus>(ConversionStatus.IDLE);
   const [fileData, setFileData] = useState<FileData | null>(null);
   const [result, setResult] = useState<ConversionResult | null>(null);
-
-  // Handle Routing based on URL Hash
-  useEffect(() => {
-    const handleHashChange = () => {
-      const hash = window.location.hash;
-      if (hash === '#privacy') {
-        setView('privacy');
-      } else if (hash === '#terms') {
-        setView('terms');
-      } else if (hash === '#disclaimer') {
-        setView('disclaimer');
-      } else {
-        setView('home');
-      }
-      window.scrollTo(0, 0);
-    };
-
-    // Initial check
-    handleHashChange();
-
-    // Listen for changes
-    window.addEventListener('hashchange', handleHashChange);
-    return () => window.removeEventListener('hashchange', handleHashChange);
-  }, []);
 
   // Clean up object URLs when component unmounts or file changes
   useEffect(() => {
@@ -109,50 +80,45 @@ const App: React.FC = () => {
       
       <main className="flex-grow w-full bg-slate-50 relative">
         
-        {view === 'home' && (
-          <>
-            {/* Hero Background */}
-            <div className="absolute inset-0 z-0 bg-gradient-to-b from-indigo-50 to-slate-50 h-[500px] pointer-events-none"></div>
+        {/* Hero Background */}
+        <div className="absolute inset-0 z-0 bg-gradient-to-b from-indigo-50 to-slate-50 h-[500px] pointer-events-none"></div>
 
-            <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-24 relative z-10">
-              
-              {/* Main Hero Text */}
-              <div className="text-center mb-12">
-                <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight mb-4">
-                  Convert <span className="text-indigo-600">JPG to PDF</span> in seconds
-                </h2>
-                <p className="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto">
-                  The simplest way to convert your images to PDF documents. Free, private, and no software installation required.
-                </p>
-              </div>
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-24 relative z-10">
+          
+          {/* Main Hero Text */}
+          <div className="text-center mb-12">
+            <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight mb-4">
+              Free <span className="text-indigo-600">JPG to PDF Converter</span> Online
+            </h1>
+            <p className="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto">
+              Convert JPG images to PDF online quickly and securely with no signup required.
+            </p>
+          </div>
 
-              {/* Core Interaction Area */}
-              <div className="mb-20">
-                {status === ConversionStatus.IDLE ? (
-                  <FileUploader onFileSelect={handleFileSelect} />
-                ) : (
-                  <ConversionCard 
-                    status={status}
-                    fileData={fileData}
-                    onConvert={handleConvert}
-                    onReset={handleReset}
-                    onDownload={handleDownload}
-                  />
-                )}
-              </div>
+          {/* Core Interaction Area */}
+          <div className="mb-12">
+            {status === ConversionStatus.IDLE ? (
+              <FileUploader onFileSelect={handleFileSelect} />
+            ) : (
+              <ConversionCard 
+                status={status}
+                fileData={fileData}
+                onConvert={handleConvert}
+                onReset={handleReset}
+                onDownload={handleDownload}
+              />
+            )}
+          </div>
 
-              {/* SEO Content & Information */}
-              <SEOSection />
-              
-            </div>
-          </>
-        )}
+          {/* SEO Content & Information */}
+          <SEOSection />
 
-        {view === 'privacy' && <PrivacyPolicySection />}
-        
-        {view === 'terms' && <TermsOfUseSection />}
-
-        {view === 'disclaimer' && <DisclaimerSection />}
+          {/* Bottom Advertisement */}
+          <div className="max-w-4xl mx-auto mt-16">
+            <AdUnit slot="2482578430" />
+          </div>
+          
+        </div>
 
       </main>
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Scale, AlertTriangle, FileCheck, Ban, ArrowLeft } from 'lucide-react';
+import AdUnit from './AdUnit';
 
 const TermsOfUseSection: React.FC = () => {
   return (
@@ -78,6 +79,8 @@ const TermsOfUseSection: React.FC = () => {
                  These terms are effective as of {new Date().toLocaleDateString()}. We reserve the right to update these terms at any time without notice.
                </p>
             </div>
+            
+            <AdUnit slot="2482578430" />
           </div>
         </div>
 

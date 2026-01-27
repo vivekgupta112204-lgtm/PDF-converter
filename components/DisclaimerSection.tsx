@@ -1,5 +1,6 @@
 import React from 'react';
 import { AlertCircle, HelpCircle, ExternalLink, Info } from 'lucide-react';
+import AdUnit from './AdUnit';
 
 const DisclaimerSection: React.FC = () => {
   return (
@@ -64,6 +65,8 @@ const DisclaimerSection: React.FC = () => {
                  Under no circumstance shall we have any liability to you for any loss or damage of any kind incurred as a result of the use of the site or reliance on any information provided on the site. Your use of the site and your reliance on any information on the site is solely at your own risk.
                </p>
             </div>
+            
+            <AdUnit slot="2482578430" />
 
           </div>
         </div>
