@@ -3,62 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - JPG to PDF Converter</title>
+    <title>Privacy Policy - PDF Converter</title>
     <meta name="robots" content="noindex">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-slate-50 text-slate-900 font-sans antialiased flex flex-col min-h-screen">
     
-    <nav class="bg-white border-b border-slate-200">
-        <div class="max-w-5xl mx-auto px-4 h-16 flex items-center justify-between">
-            <a href="/" class="text-xl font-bold text-slate-900">PDF Converter</a>
-            <a href="/" class="text-sm font-medium text-indigo-600 hover:text-indigo-800">Back to Tool</a>
+    <nav class="bg-white border-b border-slate-200 sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-2 group">
+                <div class="bg-indigo-600 p-1.5 rounded-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                </div>
+                <span class="text-xl font-bold text-slate-900">PDF Converter</span>
+            </a>
+            <div class="hidden md:flex gap-8 text-sm font-medium text-slate-600">
+                <a href="index.html" class="hover:text-indigo-600 transition-colors">Home</a>
+                <a href="about.html" class="hover:text-indigo-600 transition-colors">About Us</a>
+                <a href="blog.html" class="hover:text-indigo-600 transition-colors">Blog</a>
+                <a href="contact.html" class="hover:text-indigo-600 transition-colors">Contact</a>
+            </div>
         </div>
     </nav>
 
-    <main class="flex-grow max-w-3xl mx-auto px-4 py-12">
-        <h1 class="text-3xl font-bold mb-8">Privacy Policy</h1>
+    <main class="flex-grow max-w-4xl mx-auto px-4 py-16">
+        <h1 class="text-4xl font-bold mb-8 text-center">Privacy Policy</h1>
         
-        <div class="bg-white p-8 rounded-xl shadow-sm border border-slate-200 space-y-6 text-slate-700 leading-relaxed">
-            <p class="text-sm text-slate-500">Last updated: <script>document.write(new Date().toLocaleDateString())</script></p>
+        <div class="bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-slate-200 space-y-8 text-slate-700 leading-relaxed">
+            <p class="text-sm text-slate-500 text-center border-b border-slate-100 pb-8">Last updated: <script>document.write(new Date().toLocaleDateString())</script></p>
 
             <section>
-                <h2 class="text-xl font-bold text-slate-900 mb-3">1. No Server Uploads</h2>
-                <p>We prioritize your security above all else. Unlike many other online tools, <strong>we do not upload your files to our servers</strong>. All file processing is performed locally within your web browser using client-side WebAssembly technology. Your documents never leave your device.</p>
-            </section>
-
-            <section>
-                <h2 class="text-xl font-bold text-slate-900 mb-3">2. Data Collection</h2>
-                <p>We do not collect, store, or share any personal information. 
+                <h2 class="text-2xl font-bold text-slate-900 mb-4">1. Introduction</h2>
+                <p>Your privacy is critically important to us. At PDF Converter, we have a few fundamental principles:</p>
                 <ul class="list-disc pl-5 mt-2 space-y-1">
-                    <li>No user accounts are required to use this service.</li>
-                    <li>No email addresses are collected.</li>
-                    <li>No file contents are viewed, analyzed, or stored by us.</li>
+                    <li>We do not ask you for personal information unless we truly need it.</li>
+                    <li>We do not share your personal information with anyone except to comply with the law, develop our products, or protect our rights.</li>
+                    <li>We do not store personal information on our servers unless required for the on-going operation of one of our services.</li>
                 </ul>
-                </p>
             </section>
 
             <section>
-                <h2 class="text-xl font-bold text-slate-900 mb-3">3. File Retention</h2>
-                <p>Since files are processed exclusively on your device, we have absolutely no access to them. Once you close the browser tab or refresh the page, any temporary data used for the conversion is instantly cleared from your browser's memory.</p>
+                <h2 class="text-2xl font-bold text-slate-900 mb-4">2. File Security (Client-Side Processing)</h2>
+                <p>We pride ourselves on being a secure, client-side application. Unlike other converters that upload your files to a cloud server to be processed:</p>
+                <p class="mt-2 font-medium">Your files never leave your device.</p>
+                <p class="mt-2">All conversion logic (JPG to PDF) happens within your web browser using WebAssembly and JavaScript technologies. This means we technically cannot see, store, copy, or share your documents because they are never transmitted to us.</p>
             </section>
-            
+
             <section>
-                <h2 class="text-xl font-bold text-slate-900 mb-3">4. Cookies & Usage Data</h2>
-                <p>We may use standard third-party services (such as Google Analytics or Google AdSense) to analyze website traffic and display advertisements. These services may collect anonymous data (e.g., browser type, visit duration, geographic location) to improve user experience, but they cannot identify you personally or access your files.</p>
+                <h2 class="text-2xl font-bold text-slate-900 mb-4">3. GDPR Compliance</h2>
+                <p>For users in the European Union, we adhere to the General Data Protection Regulation (GDPR). Since we do not collect or process personal data or files on our servers, we act as a tool provider rather than a data processor. However, we respect your rights to privacy and data control.</p>
+            </section>
+
+            <section>
+                <h2 class="text-2xl font-bold text-slate-900 mb-4">4. Cookies and Analytics</h2>
+                <p>We use cookies to help identify and track visitors, their usage of our website, and their website access preferences. Visitors who do not wish to have cookies placed on their computers should set their browsers to refuse cookies before using our website.</p>
+                <p class="mt-2">We may use third-party services like Google Analytics or Google AdSense. These third parties may access your data and are subject to their own privacy policies.</p>
+            </section>
+
+            <section>
+                <h2 class="text-2xl font-bold text-slate-900 mb-4">5. Changes to this Policy</h2>
+                <p>We may update our Privacy Policy from time to time. We advise you to review this page periodically for any changes. Changes are effective when they are posted on this page.</p>
             </section>
         </div>
     </main>
 
-    <footer class="bg-slate-900 text-slate-400 py-8 mt-auto">
-        <div class="max-w-5xl mx-auto px-4 text-center text-sm">
-            <div class="flex justify-center space-x-6 mb-4 font-medium">
-                <a href="/" class="hover:text-white transition-colors">Home</a>
-                <a href="privacy.html" class="hover:text-white transition-colors">Privacy Policy</a>
-                <a href="terms.html" class="hover:text-white transition-colors">Terms & Conditions</a>
-                <a href="disclaimer.html" class="hover:text-white transition-colors">Disclaimer</a>
+    <footer class="bg-slate-900 text-slate-400 py-12">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <div class="flex justify-center space-x-6 mb-8 text-sm font-medium">
+                <a href="index.html" class="hover:text-white transition-colors">Home</a>
+                <a href="terms.html" class="hover:text-white transition-colors">Terms of Use</a>
+                <a href="contact.html" class="hover:text-white transition-colors">Contact</a>
+                <a href="privacy.html" class="text-white transition-colors">Privacy</a>
             </div>
-            <p>&copy; <script>document.write(new Date().getFullYear())</script> PDF Converter. All rights reserved.</p>
+            <p class="text-sm">&copy; <script>document.write(new Date().getFullYear())</script> PDF Converter. All rights reserved.</p>
         </div>
     </footer>
 </body>
