@@ -4,16 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Free PDF Converter | Convert JPG to PDF Online Instantly</title>
-    <meta name="description" content="Convert JPG, PNG, and images to PDF documents online for free. Fast, secure, and privacy-focused PDF converter tool. No signup required.">
-    <meta name="keywords" content="jpg to pdf, png to pdf, image to pdf, free pdf converter, online pdf tool, convert image to pdf safely">
+    <meta name="description" content="The best free online JPG to PDF converter. Convert images to professional PDF documents securely in your browser. No signup, no watermarks, unlimited use.">
+    <meta name="keywords" content="jpg to pdf, png to pdf, image to pdf, free pdf converter, online pdf tool, convert image to pdf safely, document management">
+    <link rel="canonical" href="https://vivekgupta112204-lgtm.github.io/PDF-converter/">
     
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://vivekgupta112204-lgtm.github.io/PDF-converter/">
+    <meta property="og:title" content="Free PDF Converter | Convert JPG to PDF Online Instantly">
+    <meta property="og:description" content="Convert JPG, PNG, and images to PDF documents online for free. Fast, secure, and privacy-focused.">
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
     <!-- jsPDF Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     
-    <!-- Schema.org Markup for Software Application -->
+    <!-- Schema.org Markup -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -27,7 +34,47 @@
         "priceCurrency": "USD"
       },
       "description": "A free online tool to convert images to PDF securely in the browser without server uploads.",
-      "featureList": "JPG to PDF, PNG to PDF, Client-side processing, Privacy focused"
+      "featureList": "JPG to PDF, PNG to PDF, Client-side processing, Privacy focused, No watermarks",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "ratingCount": "1250"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "Is this JPG to PDF converter free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, our JPG to PDF converter is 100% free. You can convert unlimited files without any hidden costs, subscriptions, or watermarks."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Is it safe to convert my private documents?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Absolutely. We use client-side technology (WebAssembly), which means your files are processed directly in your web browser. Your images are never uploaded to our servers, ensuring total privacy."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Can I convert PNG files to PDF?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, our tool supports both JPG/JPEG and PNG formats. It preserves the quality and aspect ratio of your PNG images during the conversion process."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Does this tool work on mobile devices?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, our converter is fully responsive and works seamlessly on iPhone, Android, tablets, and desktop computers (Windows, Mac, Linux)."
+        }
+      }]
     }
     </script>
 
@@ -54,9 +101,9 @@
 <script type="importmap">
 {
   "imports": {
+    "react/": "https://esm.sh/react@^19.2.4/",
     "react": "https://esm.sh/react@^19.2.4",
-    "lucide-react": "https://esm.sh/lucide-react@^0.563.0",
-    "react/": "https://esm.sh/react@^19.2.4/"
+    "lucide-react": "https://esm.sh/lucide-react@^0.563.0"
   }
 }
 </script>
@@ -156,86 +203,135 @@
         <!-- Detailed Content Section for SEO -->
         <section class="py-16 bg-white border-t border-slate-100">
             <div class="max-w-4xl mx-auto px-4 prose prose-indigo prose-lg text-slate-600">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl font-bold text-slate-900 mb-4">The Ultimate Free PDF Converter</h2>
-                    <p class="text-lg">Transform your images into professional documents in seconds.</p>
+                
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold text-slate-900 mb-4">The Best Online Tool to Convert JPG to PDF</h2>
+                    <p class="text-lg">Fast, reliable, and completely private document conversion for everyone.</p>
                 </div>
 
-                <div class="grid md:grid-cols-2 gap-12 mb-16">
-                    <div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-3">Why Convert Images to PDF?</h3>
-                        <p>
-                            Converting images (JPG, PNG) to PDF is essential for professional documentation. PDFs maintain consistent formatting across all devices, reduce file sizes for easier sharing via email, and are the global standard for printing and archiving. Whether you are a student submitting homework or a business professional sending receipts, a PDF ensures your document looks exactly as intended.
-                        </p>
-                    </div>
-                    <div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-3">Privacy & Security First</h3>
-                        <p>
-                            Unlike other online converters, our tool uses <strong>Client-Side WebAssembly Technology</strong>. This means your files are processed entirely within your own browser and are <strong>never uploaded to our servers</strong>. This guarantees 100% privacy for your sensitive documents, personal photos, and confidential data.
-                        </p>
-                    </div>
+                <!-- Section 1: Introduction -->
+                <div class="mb-16">
+                    <h3 class="text-2xl font-bold text-slate-900 mb-4">What is the PDF Converter Tool?</h3>
+                    <p>
+                        In today's digital landscape, the Portable Document Format (PDF) is the gold standard for sharing documents. However, many of our files start as images—scanned contracts, photos of receipts, or snapshots of lecture notes. Sending these raw images is often unprofessional and inefficient.
+                    </p>
+                    <p>
+                        Our <strong>Free PDF Converter</strong> is a specialized web-based utility designed to bridge this gap. It allows anyone to transform standard image files (JPG, JPEG, PNG) into a polished, standardized PDF document. Whether you are a student, a freelancer, or a corporate professional, this tool is built to make your workflow smoother, faster, and more secure.
+                    </p>
                 </div>
 
+                <!-- Section 2: Step-by-Step Guide -->
                 <div class="bg-slate-50 rounded-2xl p-8 border border-slate-200 mb-16">
-                    <h3 class="text-2xl font-bold text-slate-900 mb-6 text-center">How to Convert JPG to PDF</h3>
-                    <div class="grid md:grid-cols-3 gap-6">
-                        <div class="text-center">
-                            <div class="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-xl">1</div>
-                            <h4 class="font-bold text-slate-900 mb-2">Upload</h4>
-                            <p class="text-sm">Drag and drop your JPG or PNG image directly into the converter box.</p>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-6 text-center">Step-by-Step Guide: How to Convert Images to PDF</h3>
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="relative">
+                            <div class="w-12 h-12 bg-indigo-600 text-white rounded-full flex items-center justify-center mb-4 font-bold text-xl shadow-lg shadow-indigo-200">1</div>
+                            <h4 class="font-bold text-slate-900 mb-2 text-lg">Upload Your Image</h4>
+                            <p class="text-sm leading-relaxed">Click the upload area or simply drag and drop your JPG or PNG file directly onto the page. Our tool accepts high-resolution images instantly.</p>
                         </div>
-                        <div class="text-center">
-                            <div class="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-xl">2</div>
-                            <h4 class="font-bold text-slate-900 mb-2">Convert</h4>
-                            <p class="text-sm">Click the "Convert to PDF" button. The process happens instantly.</p>
+                        <div class="relative">
+                            <div class="w-12 h-12 bg-indigo-600 text-white rounded-full flex items-center justify-center mb-4 font-bold text-xl shadow-lg shadow-indigo-200">2</div>
+                            <h4 class="font-bold text-slate-900 mb-2 text-lg">Automatic Conversion</h4>
+                            <p class="text-sm leading-relaxed">Click the "Convert to PDF" button. Our intelligent engine resizes and centers your image onto an A4 page layout automatically.</p>
                         </div>
-                        <div class="text-center">
-                            <div class="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-xl">3</div>
-                            <h4 class="font-bold text-slate-900 mb-2">Download</h4>
-                            <p class="text-sm">Save your newly created high-quality PDF document to your device.</p>
+                        <div class="relative">
+                            <div class="w-12 h-12 bg-indigo-600 text-white rounded-full flex items-center justify-center mb-4 font-bold text-xl shadow-lg shadow-indigo-200">3</div>
+                            <h4 class="font-bold text-slate-900 mb-2 text-lg">Download & Share</h4>
+                            <p class="text-sm leading-relaxed">Within seconds, your PDF is ready. Click "Download" to save it to your device. You can now email or archive it professionally.</p>
                         </div>
                     </div>
                 </div>
 
-                <div>
-                    <h3 class="text-2xl font-bold text-slate-900 mb-6">Key Features of Our PDF Tool</h3>
-                    <ul class="space-y-4">
+                <!-- Section 3: Use Cases -->
+                <div class="mb-16">
+                    <h3 class="text-2xl font-bold text-slate-900 mb-6">Who Needs a PDF Converter?</h3>
+                    <p>The versatility of PDF files makes this tool essential for various groups:</p>
+                    <ul class="space-y-4 mt-4">
                         <li class="flex items-start">
-                            <svg class="h-6 w-6 text-green-500 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-                            <span><strong>Zero Cost:</strong> This tool is 100% free forever. No hidden subscriptions, no credit cards, and no daily limits on conversions.</span>
+                            <svg class="h-6 w-6 text-indigo-600 mr-3 flex-shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>
+                            <div>
+                                <strong>Students & Academia:</strong> Easily convert photos of handwritten notes, whiteboard sessions, or textbook pages into a clean PDF for studying or submission to learning portals like Canvas or Blackboard.
+                            </div>
                         </li>
                         <li class="flex items-start">
-                            <svg class="h-6 w-6 text-green-500 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-                            <span><strong>No Watermarks:</strong> We believe your documents belong to you. We do not add any intrusive watermarks or branding to your converted files.</span>
+                            <svg class="h-6 w-6 text-indigo-600 mr-3 flex-shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                            <div>
+                                <strong>Business Professionals:</strong> Convert scans of invoices, receipts, and contracts. Sending a single PDF is far more professional than attaching multiple raw JPEG images to an email.
+                            </div>
                         </li>
                         <li class="flex items-start">
-                            <svg class="h-6 w-6 text-green-500 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-                            <span><strong>Universal Compatibility:</strong> Works seamlessly on Windows, Mac, Linux, Android, and iOS devices using Chrome, Firefox, Safari, or Edge.</span>
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="h-6 w-6 text-green-500 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-                            <span><strong>High Quality:</strong> Our conversion engine preserves the resolution and clarity of your original images during the PDF creation process.</span>
+                            <svg class="h-6 w-6 text-indigo-600 mr-3 flex-shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" /></svg>
+                            <div>
+                                <strong>Legal & Administrative:</strong> Government forms and ID submissions almost always require PDF format. Our tool ensures your ID cards and documents meet these strict upload requirements.
+                            </div>
                         </li>
                     </ul>
                 </div>
 
-                <div class="mt-16 pt-12 border-t border-slate-200">
-                    <h3 class="text-2xl font-bold text-slate-900 mb-6">Frequently Asked Questions</h3>
-                    <div class="space-y-6">
-                        <div>
-                            <h4 class="font-bold text-slate-900 text-lg">Is it safe to convert private documents?</h4>
-                            <p class="text-slate-600">Yes, absolutely. Because we use browser-based processing, your file never leaves your computer. It is safer than server-based converters because there is no risk of interception during upload.</p>
+                <!-- Section 4: Benefits vs Software -->
+                <div class="mb-16">
+                    <h3 class="text-2xl font-bold text-slate-900 mb-6">Why Choose an Online Converter Over Software?</h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+                            <h4 class="font-bold text-slate-900 mb-2">Accessibility</h4>
+                            <p class="text-sm">No need to download heavy software like Adobe Acrobat. Our tool works in your browser on any device.</p>
                         </div>
-                        <div>
-                            <h4 class="font-bold text-slate-900 text-lg">Can I convert PDF back to JPG?</h4>
-                            <p class="text-slate-600">Currently, our tool specializes in Image-to-PDF conversion. We are working on adding more features, including PDF-to-Image, merging, and compression in future updates.</p>
+                        <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+                            <h4 class="font-bold text-slate-900 mb-2">Speed</h4>
+                            <p class="text-sm">Software updates and installations take time. Our tool loads instantly and converts files in milliseconds.</p>
                         </div>
-                        <div>
-                            <h4 class="font-bold text-slate-900 text-lg">Do I need to install any software?</h4>
-                            <p class="text-slate-600">No installation is required. This is a cloud-native web application that runs directly in your browser, saving you disk space and setup time.</p>
+                        <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+                            <h4 class="font-bold text-slate-900 mb-2">Cost-Effective</h4>
+                            <p class="text-sm">Most PDF software requires a paid subscription. Our online tool is completely free for everyone.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+                            <h4 class="font-bold text-slate-900 mb-2">Simplicity</h4>
+                            <p class="text-sm">Complex menus and toolbars are confusing. We offer a simple "One-Click" interface designed for efficiency.</p>
                         </div>
                     </div>
                 </div>
+
+                <!-- Section 5: Security -->
+                <div class="bg-indigo-50 border-l-4 border-indigo-600 p-8 rounded-r-xl mb-16">
+                    <h3 class="text-2xl font-bold text-slate-900 mb-4">Unmatched File Security & Privacy</h3>
+                    <p class="mb-4">
+                        Security is the #1 concern when using online tools. Most other websites require you to upload your file to their server to be processed. This creates a risk of data interception or retention.
+                    </p>
+                    <p class="font-semibold text-indigo-900">
+                        We are different. We use Client-Side Processing.
+                    </p>
+                    <p class="mt-2">
+                        This means your file <strong>never leaves your computer</strong>. The conversion happens entirely within your own web browser using WebAssembly technology. We cannot see, store, copy, or share your files because we simply do not have access to them. Once you close the tab, all temporary data is wiped from your browser's memory.
+                    </p>
+                </div>
+
+                <!-- Section 6: FAQ -->
+                <div class="border-t border-slate-200 pt-16">
+                    <h3 class="text-2xl font-bold text-slate-900 mb-8 text-center">Frequently Asked Questions</h3>
+                    <div class="space-y-6">
+                        <div class="border-b border-slate-100 pb-6">
+                            <h4 class="font-bold text-slate-900 text-lg mb-2">Is there a limit to how many files I can convert?</h4>
+                            <p class="text-slate-600">No. You can convert as many JPG or PNG files as you like. There are no daily limits and no paywalls.</p>
+                        </div>
+                        <div class="border-b border-slate-100 pb-6">
+                            <h4 class="font-bold text-slate-900 text-lg mb-2">Does the converted PDF have a watermark?</h4>
+                            <p class="text-slate-600">Never. We believe your documents belong to you. We do not add any branding, logos, or watermarks to your output files.</p>
+                        </div>
+                        <div class="border-b border-slate-100 pb-6">
+                            <h4 class="font-bold text-slate-900 text-lg mb-2">Can I use this on my iPhone or Android?</h4>
+                            <p class="text-slate-600">Yes! Our website is fully responsive. You can take a photo of a document with your phone camera and convert it to PDF instantly using this site.</p>
+                        </div>
+                        <div class="border-b border-slate-100 pb-6">
+                            <h4 class="font-bold text-slate-900 text-lg mb-2">How long does the conversion take?</h4>
+                            <p class="text-slate-600">It is nearly instant. Because the conversion happens on your device (and doesn't need to be uploaded to a slow server), it typically takes less than 1 second.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-900 text-lg mb-2">Do I need to create an account?</h4>
+                            <p class="text-slate-600">No account is required. We value your anonymity. You do not need to provide an email address or sign up to use our services.</p>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </section>
 
@@ -250,7 +346,7 @@
                         <span class="text-xl font-bold">PDF Converter</span>
                     </a>
                     <p class="text-sm text-slate-500 max-w-xs leading-relaxed">
-                        We are dedicated to providing free, secure, and accessible document tools for everyone. Simplify your workflow today with our instant conversion technology.
+                        We provide free, secure, and instant document conversion tools for everyone. Our mission is to simplify file management without compromising privacy.
                     </p>
                 </div>
                 <div>

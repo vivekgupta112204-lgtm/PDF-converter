@@ -11,7 +11,7 @@
       "@context": "https://schema.org",
       "@type": "BlogPosting",
       "headline": "How to Convert Files Safely Online",
-      "image": "https://example.com/safety-thumbnail.jpg",
+      "image": "https://vivekgupta112204-lgtm.github.io/PDF-converter/assets/blog2.jpg",
       "author": {
         "@type": "Organization",
         "name": "PDF Converter Team"
@@ -54,7 +54,7 @@
             </div>
 
             <div class="p-8 md:p-12 prose prose-slate prose-lg max-w-none text-slate-600">
-                <p class="lead text-xl text-slate-700">
+                <p class="lead text-xl text-slate-700 font-medium">
                     The convenience of online tools is undeniable. Need to merge a PDF? Google it. Need to convert a JPG? Click the first link. But as we upload tax returns, contracts, and ID scans to random websites, we rarely stop to ask: "Where is my file actually going?"
                 </p>
                 <p>
@@ -65,7 +65,7 @@
                 <p>
                     This is the single most important technical distinction in online safety.
                 </p>
-                <ul>
+                <ul class="list-disc pl-5">
                     <li><strong>Server-Side Processing:</strong> Most old-school converters work this way. You upload your file to their server (a computer owned by them), the server converts it, and sends it back to you. This means your file physically leaves your control. You have to trust that they delete it afterwards.</li>
                     <li><strong>Client-Side Processing (The Gold Standard):</strong> Modern tools (like ours) use technologies like WebAssembly to run the conversion code <em>inside your web browser</em>. Your file never leaves your computer. The website acts merely as a tool provider, not a file processor.</li>
                 </ul>
@@ -82,12 +82,12 @@
 
                 <h2 class="text-2xl font-bold text-slate-900 mt-8">How to Verify a Tool is Safe</h2>
                 <p>
-                    <strong>Disconnect the Internet Test:</strong> This is a cool trick for client-side tools. Load the webpage, then turn off your Wi-Fi. Try to convert a file. If it still works, that means the code is running locally on your machine, and it is physically impossible for the file to be sent to a server. (Note: This only works for client-side tools).
+                    <strong>Disconnect the Internet Test:</strong> This is a cool trick for client-side tools. Load the webpage, then turn off your Wi-Fi. Try to convert a file. If it still works, that means the code is running locally on your machine, and it is physically impossible for the file to be sent to a server. (Note: This only works for client-side tools like ours).
                 </p>
 
                 <h2 class="text-2xl font-bold text-slate-900 mt-8">Why We Built a Client-Side Converter</h2>
                 <p>
-                    At PDF Converter, we believe that trust should be built into the code, not just promised in a policy. We engineered our image-to-PDF tool to operate entirely in the browser memory. 
+                    At <a href="index.html">PDF Converter</a>, we believe that trust should be built into the code, not just promised in a policy. We engineered our image-to-PDF tool to operate entirely in the browser memory. 
                 </p>
                 <p>
                     When you drop a file onto our page, our JavaScript code reads the file locally, converts it, and generates the download link without a single byte of data touching our servers. This architecture eliminates the risk of data breaches, leaks, or misuse.
